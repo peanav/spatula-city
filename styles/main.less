@@ -1,9 +1,7 @@
 @logo-color: #2b5fb4;
-@logo-color-dark: #1e4381;
 @button-color: #eee;
-@button-color-dark: #ccc;
 @width: 960px;
-@grid-width: 137px;
+@grid-width: floor(((@width - 20) - (@gutter-width * 6)) / 6);
 @gutter-width: 20px;
 
 // Mixins
@@ -13,22 +11,22 @@
   border-radius: @radius;
 }
 
-.gradient (@top, @bottom) {
-  background: @top;
-  background: -webkit-linear-gradient(top, @top, @bottom);
-  background: -moz-linear-gradient(top, @top, @bottom);
-  background: -ms-linear-gradient(top, @top, @bottom);
-  background: -o-linear-gradient(top, @top, @bottom);
+.gradient ( @color ) {
+  background: @color;
+  background: -webkit-linear-gradient(top, @color, darken(@color, 20%));
+  background: -moz-linear-gradient(top, @color, darken(@color, 20%));
+  background: -ms-linear-gradient(top, @color, darken(@color, 20%));
+  background: -o-linear-gradient(top, @color, darken(@color, 20%));
 }
 
-.button (@top, @bottom) {
+.button (@color) {
   .border-radius( 5px );
-  .gradient( @top, @bottom );
+  .gradient( @color );
   padding: 2px 10px;
   cursor: pointer;
   border-style: solid;
   border-width: 1px;
-  border-color: (@top - #111) (@bottom + #111) (@bottom - #111);
+  border-color: darken(@color, 10%) darken(@color, 15%) darken(@color, 30%);
 }
 
 * {
@@ -70,7 +68,7 @@ header {
     font-weight: normal;
     color: #fff;
     .border-radius;
-    .gradient( @logo-color, @logo-color-dark );
+    .gradient( @logo-color );
   }
 }
 
@@ -80,7 +78,7 @@ h2 {
     float: right;
     font-size: 12px;
     margin-top: 10px;
-    .button( @button-color, @button-color-dark );
+    .button( @button-color );
   }
 }
 
