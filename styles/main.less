@@ -1,3 +1,8 @@
+@logo-color: #2b5fb4;
+@logo-color-dark: #1e4381;
+@button-color: #eee;
+@button-color-dark: #ccc;
+@width: 1100px;
 
 * {
   -webkit-box-sizing: border-box;
@@ -14,11 +19,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #335ba6;
+  color: @logo-color;
 }
 
 #wrapper {
-  width: 960px;
+  width: @width;
   margin: 0 auto;
   background: #fff;
   position: relative;
@@ -39,11 +44,11 @@ header {
     font-size: 1.625em;
     font-weight: normal;
     color: #fff;
-    background: #2b5fb4;
-    background: -webkit-linear-gradient(top, #2b5fb4, #1e4381);
-    background: -moz-linear-gradient(top, #2b5fb4, #1e4381);
-    background: -ms-linear-gradient(top, #2b5fb4, #1e4381);
-    background: -o-linear-gradient(top, #2b5fb4, #1e4381);
+    background: @logo-color;
+    background: -webkit-linear-gradient(top, @logo-color, @logo-color-dark);
+    background: -moz-linear-gradient(top, @logo-color, @logo-color-dark);
+    background: -ms-linear-gradient(top, @logo-color, @logo-color-dark);
+    background: -o-linear-gradient(top, @logo-color, @logo-color-dark);
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -63,11 +68,11 @@ h2 {
     padding: 2px 10px;
     cursor: pointer;
     margin-top: 10px;
-    background: #eee;
-    background: -webkit-linear-gradient(top, #eee, #ccc);
-    background: -moz-linear-gradient(top, #eee, #ccc);
-    background: -ms-linear-gradient(top, #eee, #ccc);
-    background: -o-linear-gradient(top, #eee, #ccc);
+    background: @button-color;
+    background: -webkit-linear-gradient(top, @button-color, @button-color-dark);
+    background: -moz-linear-gradient(top, @button-color, @button-color-dark);
+    background: -ms-linear-gradient(top, @button-color, @button-color-dark);
+    background: -o-linear-gradient(top, @button-color, @button-color-dark);
   }
 }
 
@@ -83,7 +88,7 @@ nav {
       float: left;
       padding: 3px 10px;
 
-      &current {
+      &.current {
         background: rgba(0,0,0,0.5);
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
