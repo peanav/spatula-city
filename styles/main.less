@@ -19,6 +19,14 @@
   background: -o-linear-gradient(top, @color, darken(@color, 20%));
 }
 
+.button(@color) when (lightness(@color) >= 50%) {
+  color: darken(@color, 50%);
+}
+
+.button(@color) when (lightness(@color) < 50%) {
+  color: lighten(@color, 50%);
+}
+
 .button (@color) {
   .border-radius( 5px );
   .gradient( @color );
