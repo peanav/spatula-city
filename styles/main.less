@@ -2,7 +2,9 @@
 @logo-color-dark: #1e4381;
 @button-color: #eee;
 @button-color-dark: #ccc;
-@width: 1100px;
+@width: 960px;
+@grid-width: 137px;
+@gutter-width: 20px;
 
 // Mixins
 .border-radius (@radius: 5px) {
@@ -24,7 +26,9 @@
   .gradient( @top, @bottom );
   padding: 2px 10px;
   cursor: pointer;
-  border: solid 1px #bbb;
+  border-style: solid;
+  border-width: 1px;
+  border-color: (@top - #111) (@bottom + #111) (@bottom - #111);
 }
 
 * {
@@ -202,15 +206,15 @@ footer {
 .container-6 {
   margin-left: auto;
   margin-right: auto;
-  width: 942px;
+  width: @grid-width * 6 + @gutter-width * 6;
   overflow: hidden;
 }
 
 .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6 {
   display: inline;
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: @gutter-width / 2;
+  margin-right: @gutter-width / 2;
 }
 
 .alpha {
@@ -223,26 +227,26 @@ footer {
 
 .container-6 {
   .grid-1 {
-    width: 137px;
+    width: @grid-width;
   }
 
   .grid-2 {
-    width: 294px;
+    width: @grid-width * 2 + @gutter-width;
   }
 
   .grid-3 {
-    width: 451px;
+    width: @grid-width * 3 + @gutter-width * 2;
   }
 
   .grid-4 {
-    width: 608px;
+    width: @grid-width * 4 + @gutter-width * 3;
   }
 
   .grid-5 {
-    width: 765px;
+    width: @grid-width * 5 + @gutter-width * 4;
   }
 
   .grid-6 {
-    width: 922px;
+    width: @grid-width * 6 + @gutter-width * 5;
   }
 }
